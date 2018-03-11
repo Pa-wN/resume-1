@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>我 的 简 历</title>
   <link rel="stylesheet" href="./style/index.css">
+  <script src="http://at.alicdn.com/t/font_587172_cjfk2obr7bep14i.js"></script>
 </head>
 <body>
   <header class="topNavBar clearfix">
@@ -40,55 +40,47 @@
       </ul>
     </nav>
   </header>
-  <div class="banner"></div>
+  <div class="banner">
+      <div class="mask"></div>
+  </div>
   <main>
-    <div class="picture">
-      <img src="/" alt="头像">
-    </div>
-    <div class="text">
-      <span class="hello">HELLO</span>
-      <h1>黄马轩</h1>
-      <p>前端工程师</p>
-      <hr>
-      <dl>
-        <dt>年龄</dt>
-        <dd>18</dd>
-        <dt>所在城市</dt>
-        <dd>广州</dd>
-        <dt>邮箱</dt>
-        <dd>1601245106@qq.com</dd>
-        <dt>手机</dt>
-        <dd>18218253041</dd>
-      </dl>
+    <div class="card clearfix">
+      <div class="portrait">
+        <img src="./img/portrait.jpg" alt="头像">
+      </div>
+      <div class="text">
+        <span class="hello">HELLO</span>
+        <h1>黄马轩</h1>
+        <p>前端工程师</p>
+        <hr>
+        <dl>
+          <dt>年龄</dt>
+          <dd>18</dd>
+          <dt>所在城市</dt>
+          <dd>广州</dd>
+          <dt>邮箱</dt>
+          <dd>1601245106@qq.com</dd>
+          <dt>手机</dt>
+          <dd>18218253041</dd>
+        </dl>
+      </div>
     </div>
     <div class="contact">
-      <ul>
-        <li>
-          <a href="">
-            <i></i>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <i></i>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <i></i>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <i></i>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <i></i>
-          </a>
-        </li>
-      </ul>
+      <a href="##">
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-github"></use>
+        </svg>
+      </a>
+      <a href="##">
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-wechat"></use>
+        </svg>
+      </a>
+      <a href="##">
+        <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-twitter"></use>
+        </svg>
+      </a>
     </div>
     <div class="download">
       <a href="#">DOWNLOAD RESUME</a>
@@ -96,6 +88,7 @@
         the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript,
         SQL, and C. Stng background in project management and customer relations.</p>
     </div>
+
     <section>
       <h2>技能</h2>
       <ol>
@@ -107,6 +100,7 @@
         <li>HTTP</li>
       </ol>
     </section>
+
     <section>
       <h2>作品集</h2>
       <nav>
@@ -124,5 +118,4 @@
     </section>
   </main>
 </body>
-
 </html>
