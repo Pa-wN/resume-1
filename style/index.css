@@ -1,6 +1,9 @@
-body, ul, h1 {
+body, ul, h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
 }
 * {
   box-sizing: border-box;
@@ -8,6 +11,7 @@ body, ul, h1 {
   padding: 0;
 }
 body {
+  background: #efefef;
 }
 li {
   list-style: none;
@@ -60,7 +64,7 @@ a {
   padding: 7px 0;
 }
 .topNavBar nav > ul > li:hover {
-  border-bottom: 2px red solid;  
+  border-bottom: 2px #e8676b solid;  
 }
 
 .banner {
@@ -75,25 +79,29 @@ a {
 }
 
 main {
-  width: 930px;
+  max-width: 930px;
   margin: 0 auto;
   margin-top: -350px;
-  background: #fff;
   border-radius: 10px;
 }
 main .card {
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+  margin-bottom: 30px;
+  background: #fff;
+}
+.card .top{
   padding: 54px 50px 30px 50px;
 }
-main .card .portrait {
+.card .portrait {
   float: left;
   width: 40%;
 }
-main .card .text {
+.card .text {
   float: left;
   width: 60%;
   padding-left: 30px;
 }
-main .card .text .hello {
+.card .text .hello {
   padding: 5px 10px;
   background-color: #e8676b;
   display: inline-block;
@@ -101,7 +109,7 @@ main .card .text .hello {
   margin-bottom: 25px;
   color: #fff;
 }
-main .card .text .hello::before {
+.card .text .hello::before {
   display: inline-block;
   content: "";
   width: 0;
@@ -112,43 +120,176 @@ main .card .text .hello::before {
   border-top: 0;
   border-left: #e8676b 10px solid;
 }
-main .card .text h1 {
+.card .text h1 {
   margin-bottom: 10px;
 }
-main .card .text p {
+.card .text p {
   margin-bottom: 20px;
 }
-main .card .text hr {
+.card .text hr {
   margin-bottom: 20px;
 }
-main .card .text dl dt {
+.card .text dl dt {
   float: left;
   width: 150px;
   color: #333;
   font-weight: bold;
 }
-main .card .text dl dd {
+.card .text dl dd {
   color: #9da0a7;
   margin-left: 150px;
   margin-bottom: 10px;
 }
-main .contact {
+.card .foot {
+  float: left;
+  width: 100%;
   background: #e8676b;
   font-size: 22px;
   color: white;
   text-align: center;
   padding: 20px 0;
 }
-main .contact a {
+.card .foot a {
   margin: 0 16px;
 }
-main .contact a svg {
+.card .foot a svg {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   padding: 5px;
 }
-main .contact a svg:hover {
+.card .foot a svg:hover {
   background: rgba(208, 92, 95, 1);
 }
+
+main .download {
+  text-align: center;
+  margin-bottom: 50px;
+  font-family: cursive;
+  font-size: 22px;
+}
+
+.download a {
+  display: inline-block;
+  border: 1px solid rgb(233, 228, 228);
+  padding: 20px 40px;
+  margin-bottom: 35px;
+  transition: all 0.3s;
+}
+.download a:hover {
+  box-shadow: 0 5px 10px #898b8f;
+}
+.download p {
+  line-height: 2;
+}
+
+.skills {
+  margin-bottom: 50px;
+}
+.skills h2, .jobs h2{
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.skills ol {
+  background: #ffffff;
+  padding: 30px 50px;
+}
+.skills ol li {
+  width: 50%;
+  box-sizing: border-box;
+  float: left;
+  margin: 20px 0;
+}
+.skills ol li h3 {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+.skills ol li:nth-child(odd){
+  padding-right: 20px;
+}
+.skills ol li:nth-child(even){
+  padding-left: 20px;
+}
+.skills ol li .progressBar {
+  background: #fae1e1;
+  border-radius: 3px;
+}
+.skills ol li .progress {
+  background: #e8676b;
+  border-radius: 3px;
+  height: 5px;
+}
+
+.jobs {
+
+}
+.jobs .navBox {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.jobs nav {
+  display: inline-block;
+}
+.jobs nav ol {
+  margin-bottom: 15px;
+}
+.jobs nav ol li {
+  float: left;
+  padding: 0 20px;
+  cursor: pointer;
+}
+.jobs nav .jobBar {
+  background: #fff;
+  margin: 0 20px;
+  border-radius: 5px;
+}
+.jobs nav .jobBlock {
+  height: 5px;
+  border-radius: 5px;
+  width: 40px;
+  background: #e8676b;
+}
+.jobs nav .jobBlock {
+  transition: all 0.7s;
+}
+.jobs nav .state-1 {
+  margin-left: 0;
+}
+.jobs nav .state-2 {
+  margin-left: 70px;
+}
+.jobs nav .state-3 {
+  margin-left: 145px;
+  width: 96px;
+}
+.jobs .job {
+  position: relative;
+  height: 570px;
+}
+.jobs .job > div {
+  position: absolute;
+}
+.jobs .job .big {
+  top: 0;
+  left: 0;
+  background: url(../img/job-1.jpg) no-repeat;
+  width: 600px;
+  height: 570px;
+}
+.jobs .job .small {
+  right: 0;
+  top: 0;
+  background: url(../img/job-2.jpg) no-repeat;
+  width: 290px;
+  height: 275px;
+}
+.jobs .job .small2 {
+  right: 0;
+  bottom: 0;
+  width: 290px;
+  height: 275px;
+  background: url(../img/job-3.jpg) no-repeat;
+}
+
 
