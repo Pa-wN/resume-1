@@ -11,33 +11,46 @@
 </head>
 
 <body>
-  <header class="topNavBar clearfix">
+  <div class="welcome" id="welcome">
+    <div class="loading"></div>
+  </div>
+  <header class="topNavBar clearfix" id="headerTop">
     <div class="logo">
       <span class="rs">RS</span>
       <span class="card">CARD</span>
     </div>
-    <nav class="headNavBar">
+    <nav class="headNavBar" id="headNavBar">
       <ul class="clearfix">
-        <li>
-          <a href="">关于</a>
+        <li class="active" data-scrollTarget="about">
+          <h3>关于</h3>
+        </li>
+        <li data-scrollTarget="skills">
+          <h3>技能</h3>
+          <ul class="submenu">
+            <li>技能1</li>
+            <li>技能1</li>
+            <li>技能1</li>
+          </ul>
+        </li>
+        <li data-scrollTarget="jobs">
+          <h3>作品</h3>
+          <ul class="submenu">
+            <li>作品1</li>
+            <li>作品1</li>
+            <li>作品1</li>
+          </ul>
         </li>
         <li>
-          <a href="">技能</a>
+          <h3>博客</h3>
         </li>
         <li>
-          <a href="">作品</a>
+          <h3>日历</h3>
         </li>
         <li>
-          <a href="">博客</a>
+          <h3>联系方式</h3>
         </li>
         <li>
-          <a href="">日历</a>
-        </li>
-        <li>
-          <a href="">联系方式</a>
-        </li>
-        <li>
-          <a href="">其他</a>
+          <h3>其他</h3>
         </li>
       </ul>
     </nav>
@@ -46,7 +59,7 @@
     <div class="mask"></div>
   </div>
   <main>
-    <div class="card clearfix">
+    <div class="card clearfix data-enten" id="about" data-enten>
       <div class="top clearfix">
         <div class="portrait">
           <img src="./img/portrait.jpg" alt="头像">
@@ -89,52 +102,53 @@
 
     <div class="download">
       <a href="#">DOWNLOAD RESUME</a>
-      <p>黄马轩，来自湛江的99年天蝎男一枚~。~<br>不愿做代码的搬运工</p>
+      <p>黄马轩，来自湛江的99年天蝎男一枚~。~
+        <br>不愿做代码的搬运工</p>
     </div>
 
-    <section class="skills">
+    <section class="skills data-enten" id="skills" data-enten>
       <h2>技能</h2>
       <ol class="clearfix">
         <li>
           <h3>HTML 5 & CSS</h3>
           <div class="progressBar">
-            <div class="progress" style="width: 80%;"></div>
+            <div class="progress" data-progress style="width: 80%;"></div>
           </div>
         </li>
         <li>
           <h3>JavaScript</h3>
           <div class="progressBar">
-            <div class="progress" style="width: 60%;"></div>
+            <div class="progress" data-progress style="width: 60%;"></div>
           </div>
         </li>
         <li>
           <h3>JQUERY</h3>
           <div class="progressBar">
-            <div class="progress" style="width: 70%;"></div>
+            <div class="progress" data-progress style="width: 70%;"></div>
           </div>
         </li>
         <li>
           <h3>VUE</h3>
           <div class="progressBar">
-            <div class="progress" style="width: 60%;"></div>
+            <div class="progress" data-progress style="width: 60%;"></div>
           </div>
         </li>
         <li>
           <h3>React</h3>
           <div class="progressBar">
-            <div class="progress" style="width: 60%;"></div>
+            <div class="progress" data-progress style="width: 60%;"></div>
           </div>
         </li>
         <li>
           <h3>HTTP</h3>
           <div class="progressBar">
-            <div class="progress" style="width: 50%;"></div>
+            <div class="progress" data-progress style="width: 50%;"></div>
           </div>
         </li>
       </ol>
     </section>
 
-    <section class="jobs">
+    <section class="jobs data-enten" id="jobs" data-enten>
       <h2>作品集</h2>
       <div class="navBox">
         <nav>
@@ -156,6 +170,8 @@
       </div>
     </section>
   </main>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+  <script src="./js/index.js"></script>
 </body>
 <script>
   all.onclick = function () {
@@ -168,4 +184,5 @@
     jobBlock.className = "jobBlock state-3";
   }
 </script>
+
 </html>
