@@ -5,12 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>我 的 简 历</title>
+  <title>pawn 的 简 历</title>
   <link rel="stylesheet" href="./style/index.css">
   <script src="//at.alicdn.com/t/font_587172_cjfk2obr7bep14i.js"></script>
 </head>
 
 <body>
+  <div class="weixinBox" id="weixinBox">
+    <img src="./img/ME.jpg" alt="" style="width: 100%;height: 100%">
+  </div>
   <div class="welcome" id="welcome">
     <div class="loading"></div>
   </div>
@@ -26,11 +29,6 @@
         </li>
         <li data-scrollTarget="skills">
           <h3>技能</h3>
-          <ul class="submenu">
-            <li>技能1</li>
-            <li>技能1</li>
-            <li>技能1</li>
-          </ul>
         </li>
         <li data-scrollTarget="jobs">
           <h3>作品</h3>
@@ -41,16 +39,9 @@
           </ul>
         </li>
         <li>
-          <h3>博客</h3>
-        </li>
-        <li>
-          <h3>日历</h3>
-        </li>
-        <li>
-          <h3>联系方式</h3>
-        </li>
-        <li>
-          <h3>其他</h3>
+          <h3>
+            <a href="https://pa-wn.github.io/">博客</a>
+          </h3>
         </li>
       </ul>
     </nav>
@@ -58,6 +49,7 @@
   <div class="banner">
     <div class="mask"></div>
   </div>
+  <canvas width="1366" height="314"></canvas>
   <main>
     <div class="card clearfix data-enten" id="about" data-enten>
       <div class="top clearfix">
@@ -67,7 +59,7 @@
         <div class="text">
           <span class="hello">HELLO</span>
           <h1>黄马轩</h1>
-          <p>前端工程师</p>
+          <p>前端开发</p>
           <hr>
           <dl>
             <dt>年龄</dt>
@@ -76,27 +68,27 @@
             <dd>广州</dd>
             <dt>邮箱</dt>
             <dd>1601245106@qq.com</dd>
-            <dt>手机</dt>
-            <dd>18218253041</dd>
+            <dt>状态</dt>
+            <dd>正在求职...</dd>
           </dl>
         </div>
       </div>
       <div class="foot">
-        <a href="##">
+        <a href="https://github.com/Pa-wN">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-github"></use>
           </svg>
         </a>
-        <a href="##">
+        <a href="##" id="weixin">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-wechat"></use>
           </svg>
         </a>
-        <a href="##">
+        <!-- <a href="##">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-twitter"></use>
           </svg>
-        </a>
+        </a> -->
       </div>
     </div>
 
@@ -110,7 +102,13 @@
       <h2>技能</h2>
       <ol class="clearfix">
         <li>
-          <h3>HTML 5 & CSS</h3>
+          <h3>HTML 5</h3>
+          <div class="progressBar">
+            <div class="progress" data-progress style="width: 80%;"></div>
+          </div>
+        </li>
+        <li>
+          <h3>CSS</h3>
           <div class="progressBar">
             <div class="progress" data-progress style="width: 80%;"></div>
           </div>
@@ -118,7 +116,7 @@
         <li>
           <h3>JavaScript</h3>
           <div class="progressBar">
-            <div class="progress" data-progress style="width: 60%;"></div>
+            <div class="progress" data-progress style="width: 80%;"></div>
           </div>
         </li>
         <li>
@@ -129,12 +127,6 @@
         </li>
         <li>
           <h3>VUE</h3>
-          <div class="progressBar">
-            <div class="progress" data-progress style="width: 60%;"></div>
-          </div>
-        </li>
-        <li>
-          <h3>React</h3>
           <div class="progressBar">
             <div class="progress" data-progress style="width: 60%;"></div>
           </div>
@@ -164,9 +156,30 @@
       </div>
 
       <div class="job">
-        <div class="big"></div>
-        <div class="small"></div>
-        <div class="small2"></div>
+        <a href="https://pa-wn.github.io/Drawing/" target="_blank">
+          <img src="./img/drawing.png">
+          <h4 class="title">canvas画板</h4>
+        </a>
+        <a href="https://pa-wn.github.io/KeyboardNav/myBookmarks.html" target="_blank">
+          <img src="./img/keyNav.png">
+          <h4 class="title">键盘导航</h4>
+        </a>
+        <a href="https://pa-wn.github.io/xiaomi/" target="_blank">
+          <img src="./img/xiaomi.jpg">
+          <h4 class="title">小米官网</h4>
+        </a>
+        <a href="https://pa-wn.github.io/llq" target="_blank">
+          <img src="./img/llq.jpg">
+          <h4 class="title">bootstrap网站</h4>
+        </a>
+        <a href="https://pa-wn.github.io/vue-demo/" target="_blank">
+          <img src="./img/vue-demo.png">
+          <h4 class="title">vue-demo</h4>
+        </a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
       </div>
     </section>
   </main>
@@ -183,6 +196,59 @@
   native.onclick = function () {
     jobBlock.className = "jobBlock state-3";
   }
+
+  document.addEventListener('touchmove', function (e) {
+    e.preventDefault()
+  })
+  weixin.onmousemove= function () {
+    weixinBox.style.display = 'block';
+  }
+  weixin.onmouseout= function () {
+    weixinBox.style.display = 'none';
+  }
+  var c = document.getElementsByTagName('canvas')[0],
+    x = c.getContext('2d'),
+    pr = window.devicePixelRatio || 1,
+    w = window.innerWidth,
+    h = window.innerHeight,
+    f = 90,
+    q,
+    m = Math,
+    r = 0,
+    u = m.PI * 2,
+    v = m.cos,
+    z = m.random
+  c.width = w * pr
+  c.height = h * pr
+  x.scale(pr, pr)
+  x.globalAlpha = 0.6
+  function i() {
+    x.clearRect(0, 0, w, h)
+    q = [{ x: 0, y: h * .7 + f }, { x: 0, y: h * .7 - f }]
+    while (q[1].x < w + f) d(q[0], q[1])
+  }
+  function d(i, j) {
+    x.beginPath()
+    x.moveTo(i.x, i.y)
+    x.lineTo(j.x, j.y)
+    var k = j.x + (z() * 2 - 0.25) * f,
+      n = y(j.y)
+    x.lineTo(k, n)
+    x.closePath()
+    r -= u / -50
+    x.fillStyle = '#' + (v(r) * 127 + 128 << 16 | v(r + u / 3) * 127 + 128 << 8 | v(r + u / 3 * 2) * 127 + 128).toString(16)
+    x.fill()
+    q[0] = q[1]
+    q[1] = { x: k, y: n }
+  }
+  function y(p) {
+    var t = p + (z() * 2 - 1.1) * f
+    return (t > h || t < 0) ? y(p) : t
+  }
+  document.onclick = i
+  document.ontouchstart = i
+  i()
+
 </script>
 
 </html>
