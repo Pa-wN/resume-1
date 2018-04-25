@@ -1,215 +1,556 @@
-body, ul, h1, h2, h3, h4, h5, h6 {padding: 0;margin: 0;}
-h1, h2, h3, h4, h5, h6 {font-weight: normal;}
-* {box-sizing: border-box;margin: 0;padding: 0;}
-body {background: #efefef;margin-bottom: 50px;}
-li {list-style: none;}
-a {text-decoration: none;color: inherit;}
-.clearfix::after {display: block;content: '';clear: both;}
-.icon {width: 1em; height: 1em;vertical-align: -0.15em;fill: currentColor;overflow: hidden;}
+body,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #efefef;
+    margin-bottom: 50px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.clearfix::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
 
 /* 内容 */
+
+body::-webkit-scrollbar {
+    /* 滚动条整体部分，其中的属性有width,height,background,border（就和一个块级元素一样）等。 */
+    width: 12px;
+    height: 12px;
+}
+
+body::-webkit-scrollbar-button {
+    width: 8px;
+    height: 8px;
+}
+
+body::-webkit-scrollbar-track {
+}
+
+body::-webkit-scrollbar-track-piece {
+
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgb(235, 82, 82);
+    border-radius: 50px;
+}
+
+body::-webkit-scrollbar-corner {
+    background: #fff;
+}
+
+body::-webkit-scrollbar-resizer {
+    background: #fff;
+}
+
 .weixinBox {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 150px;
-  height: 150px;
-  margin-left: -75px;
-  margin-top: -75px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background: #333;
-  color: rgb(255, 255, 255);
-  z-index: 1;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    margin-left: -75px;
+    margin-top: -75px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: #333;
+    color: rgb(255, 255, 255);
+    z-index: 1;
 }
 
 .welcome {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #fff;
-  z-index: 2;
-  opacity: 1;
-  transition: all 0.5s;
-}
-.welcome.hide {
-  opacity: 0;
-  z-index: -1;
-}
-.welcome > .loading {
-}
-.welcome > .loading::after, .welcome > .loading::before{width: 0; height: 0;position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; content: ''; border-radius: 50%; background: #000; animation: loading 1.5s linear infinite;}
-.welcome > .loading::before { animation-delay: 0.7s;}
-
-
-@keyframes loading {
-  0% {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 2;
     opacity: 1;
+    transition: all 0.5s;
+}
+
+.welcome.hide {
+    opacity: 0;
+    z-index: -1;
+}
+
+.welcome>.loading {}
+
+.welcome>.loading::after,
+.welcome>.loading::before {
     width: 0;
     height: 0;
-  }
-  100% {
-    opacity: 0;
-    width: 50px;
-    height: 50px;
-  }
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    content: '';
+    border-radius: 50%;
+    background: #000;
+    animation: loading 1.5s linear infinite;
 }
+
+.welcome>.loading::before {
+    animation-delay: 0.7s;
+}
+
+@keyframes loading {
+    0% {
+        opacity: 1;
+        width: 0;
+        height: 0;
+    }
+    100% {
+        opacity: 0;
+        width: 50px;
+        height: 50px;
+    }
+}
+
 canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
 }
+
 .data-enten[data-enten] {
-  transform: translateY(150px);
-  opacity: 0;
+    transform: translateY(150px);
+    opacity: 0;
 }
+
 [data-enten] {
-  transition: all 0.7s;
+    transition: all 0.7s;
 }
-.topNavBar {width: 100%;padding: 20px 15px;color: #b7b7b7;font-weight: bold;position: fixed;box-sizing: border-box; transition: all 0.3s; z-index: 1; background: transparent;}
+
+.topNavBar {
+    width: 100%;
+    padding: 20px 15px;
+    color: #b7b7b7;
+    font-weight: bold;
+    position: fixed;
+    box-sizing: border-box;
+    transition: all 0.3s;
+    z-index: 1;
+    background: transparent;
+}
+
 .topNavBar.active {
-  background: #fff;
-  padding: 10px 15px;
-  box-shadow: 0 3px 25px #c1bdbd; 
-  color: #000;
+    background: #fff;
+    padding: 10px 15px;
+    box-shadow: 0 3px 25px #c1bdbd;
+    color: #000;
 }
-.topNavBar .logo {float: left;padding: 4px 0;}
-.topNavBar .logo .rs {color: rgb(235, 82, 82);font-size: 24px;}
-.topNavBar .logo .card {font-size: 18px;}
-.topNavBar nav {float: right;padding-top: 8px;}
-.topNavBar nav > ul > li {cursor: pointer;position: relative;float: left;margin: 0 25px;font-size: 12px;border-bottom: 2px transparent solid;padding-top: 7px;}
-.topNavBar nav > ul > li > h3 {
-  margin-bottom: 7px;
-}
-.topNavBar nav > ul > li > .submenu {
-  position: absolute;
-  background: #fff;
-  top: 100%;
-  right: 50px;
-  box-shadow: 0 0 5px #9c9595;
-  transition: all 0.5s;
-  opacity: 0;
-  visibility: hidden;
-}
-.topNavBar nav > ul > li:hover .submenu {
-  right: 0;
-  opacity: 1;
-  visibility: visible;
-}
-.topNavBar nav > ul > li > .submenu > li {
-  white-space: nowrap;
-  line-height: 40px;
-  color: #333;
-  padding: 0 25px;
-  transition: all 0.2s;
-}
-.topNavBar nav > ul > li > .submenu > li:hover {
-  background: rgb(241, 160, 113);
-}
-.topNavBar nav > ul > li::after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 3px;
-  background: #e8676b;
-  top: 100%;
-  transition: all 0.2s;
-}
-.topNavBar nav > ul > li.active::after {
-  width: 100%;
-}
-.topNavBar nav > ul > li:hover::after {
-  width: 100%;
-}
-.banner {background: url(../img/banner.jpg) no-repeat;background-position: center center;background-size: 100%;height: 515px;}
-.banner .mask {height: 100%;background: rgba(0, 0, 0, 0.7);}
 
-main {max-width: 930px;margin: 0 auto;margin-top: -350px;border-radius: 10px; position: relative}
-main .card {box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);margin-bottom: 30px;background: #fff;}
-.card .top{padding: 54px 50px 30px 50px;}
-.card .portrait {float: left;width: 40%;}
-.card .text {float: left;width: 60%;padding-left: 30px;}
-.card .text .hello {padding: 5px 10px;background-color: #e8676b;display: inline-block;position: relative;margin-bottom: 25px;color: #fff;}
-.card .text .hello::before {display: inline-block;content: "";width: 0;position: absolute;top: 100%;left: 4px;border: 10px solid transparent;border-top: 0;border-left: #e8676b 10px solid;}
-.card .text h1 {margin-bottom: 10px;}
-.card .text p {margin-bottom: 20px;}
-.card .text hr {margin-bottom: 20px;}
-.card .text dl dt {float: left;width: 150px;color: #333;font-weight: bold;}
-.card .text dl dd {color: #9da0a7;margin-left: 150px;margin-bottom: 10px;}
-.card .foot {float: left;width: 100%;background: #e8676b;font-size: 22px;color: white;text-align: center;padding: 20px 0;}
-.card .foot a {margin: 0 16px;}
-.card .foot a svg {width: 40px;height: 40px;border-radius: 50%;padding: 5px;}
-.card .foot a svg:hover {background: rgba(208, 92, 95, 1);}
+.topNavBar .logo {
+    float: left;
+    padding: 4px 0;
+}
 
-main .download {text-align: center;margin-bottom: 50px;font-family: cursive;font-size: 22px;}
+.topNavBar .logo .rs {
+    color: rgb(235, 82, 82);
+    font-size: 24px;
+}
 
-.download a {display: inline-block;border: 1px solid rgb(233, 228, 228);border-radius: 4px;padding: 20px 40px;margin-bottom: 35px;transition: all 0.3s;}
-.download a:hover {box-shadow: 0 5px 10px #898b8f;}
-.download p {line-height: 2;}
+.topNavBar .logo .card {
+    font-size: 18px;
+}
 
-.skills {margin-bottom: 50px;}
-.skills h2, .jobs h2{font-size: 30px;text-align: center;margin-bottom: 32px;}
-.skills ol {background: #ffffff;padding: 30px 50px;box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);}
-.skills ol li {width: 50%;box-sizing: border-box;float: left;margin: 20px 0;}
-.skills ol li h3 {font-size: 12px;margin-bottom: 5px;}
-.skills ol li:nth-child(odd){padding-right: 20px;}
-.skills ol li:nth-child(even){padding-left: 20px;}
-.skills ol li .progressBar {background: #fae1e1;border-radius: 3px;}
-.skills ol li .progress {background: #e8676b;border-radius: 3px;height: 5px; transition: all 1s}
+.topNavBar nav {
+    float: right;
+    padding-top: 8px;
+}
+
+.topNavBar nav>ul>li {
+    cursor: pointer;
+    position: relative;
+    float: left;
+    margin: 0 25px;
+    font-size: 12px;
+    border-bottom: 2px transparent solid;
+    padding-top: 7px;
+}
+
+.topNavBar nav>ul>li>h3 {
+    margin-bottom: 7px;
+}
+
+.topNavBar nav>ul>li>.submenu {
+    position: absolute;
+    background: #fff;
+    top: 100%;
+    right: 50px;
+    box-shadow: 0 0 5px #9c9595;
+    transition: all 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.topNavBar nav>ul>li:hover .submenu {
+    right: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.topNavBar nav>ul>li>.submenu>li {
+    white-space: nowrap;
+    line-height: 40px;
+    color: #333;
+    padding: 0 25px;
+    transition: all 0.2s;
+}
+
+.topNavBar nav>ul>li>.submenu>li:hover {
+    background: rgb(241, 160, 113);
+}
+
+.topNavBar nav>ul>li::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #e8676b;
+    top: 100%;
+    transition: all 0.2s;
+}
+
+.topNavBar nav>ul>li.active::after {
+    width: 100%;
+}
+
+.topNavBar nav>ul>li:hover::after {
+    width: 100%;
+}
+
+.banner {
+    background: url(../img/banner.jpg) no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    height: 515px;
+}
+
+.banner .mask {
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+main {
+    max-width: 930px;
+    margin: 0 auto;
+    margin-top: -350px;
+    border-radius: 10px;
+    position: relative
+}
+
+main .card {
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    margin-bottom: 30px;
+    background: #fff;
+}
+
+.card .top {
+    padding: 54px 50px 30px 50px;
+}
+
+.card .portrait {
+    float: left;
+    width: 40%;
+}
+
+.card .text {
+    float: left;
+    width: 60%;
+    padding-left: 30px;
+}
+
+.card .text .hello {
+    padding: 5px 10px;
+    background-color: #e8676b;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.card .text .hello::before {
+    display: inline-block;
+    content: "";
+    width: 0;
+    position: absolute;
+    top: 100%;
+    left: 4px;
+    border: 10px solid transparent;
+    border-top: 0;
+    border-left: #e8676b 10px solid;
+}
+
+.card .text h1 {
+    margin-bottom: 10px;
+}
+
+.card .text p {
+    margin-bottom: 20px;
+}
+
+.card .text hr {
+    margin-bottom: 20px;
+}
+
+.card .text dl dt {
+    float: left;
+    width: 150px;
+    color: #333;
+    font-weight: bold;
+}
+
+.card .text dl dd {
+    color: #9da0a7;
+    margin-left: 150px;
+    margin-bottom: 10px;
+}
+
+.card .foot {
+    float: left;
+    width: 100%;
+    background: #e8676b;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.card .foot a {
+    margin: 0 16px;
+}
+
+.card .foot a svg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.card .foot a svg:hover {
+    background: rgba(208, 92, 95, 1);
+}
+
+main .download {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: cursive;
+    font-size: 22px;
+}
+
+.download a {
+    display: inline-block;
+    border: 1px solid rgb(233, 228, 228);
+    border-radius: 4px;
+    padding: 20px 40px;
+    margin-bottom: 35px;
+    transition: all 0.3s;
+}
+
+.download a:hover {
+    box-shadow: 0 5px 10px #898b8f;
+}
+
+.download p {
+    line-height: 2;
+}
+
+.skills {
+    margin-bottom: 50px;
+}
+
+.skills h2,
+.jobs h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.skills ol {
+    background: #ffffff;
+    padding: 30px 50px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+}
+
+.skills ol li {
+    width: 50%;
+    box-sizing: border-box;
+    float: left;
+    margin: 20px 0;
+}
+
+.skills ol li h3 {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.skills ol li:nth-child(odd) {
+    padding-right: 20px;
+}
+
+.skills ol li:nth-child(even) {
+    padding-left: 20px;
+}
+
+.skills ol li .progressBar {
+    background: #fae1e1;
+    border-radius: 3px;
+}
+
+.skills ol li .progress {
+    background: #e8676b;
+    border-radius: 3px;
+    height: 5px;
+    transition: all 1s
+}
+
 .skills ol li .progress[data-progress] {
-  width: 0 !important;
-}
-.jobs {}
-.jobs .navBox {text-align: center;margin-bottom: 30px;}
-.jobs nav {display: inline-block;}
-.jobs nav ol {margin-bottom: 15px;}
-.jobs nav ol li {float: left;padding: 0 20px;cursor: pointer;}
-.jobs nav .jobBar {background: #fff;margin: 0 20px;border-radius: 5px;}
-.jobs nav .jobBlock {height: 5px;border-radius: 5px;width: 40px;background: #e8676b;}
-.jobs nav .jobBlock {transition: all 0.7s;}
-.jobs nav .state-1 {margin-left: 0;}
-.jobs nav .state-2 {margin-left: 70px;}
-.jobs nav .state-3 {margin-left: 145px;width: 96px;}
-.jobs .job {position: relative;}
-.jobs .job {
-  text-align: justify;
-}
-.jobs a {
-  display: inline-block;
-  width: 200px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
-  margin-bottom: 20px;
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
+    width: 0 !important;
 }
 
-.jobs .job a .title{
-  line-height: 50px;
-  width: 100%;
-  position: absolute;
-  bottom: -50px;
-  background: rgba(10, 10, 10, 0.4);
-  text-align: center;
-  transition: all 0.3s;
-  color: #fff;
+.jobs {}
+
+.jobs .navBox {
+    text-align: center;
+    margin-bottom: 30px;
 }
+
+.jobs nav {
+    display: inline-block;
+}
+
+.jobs nav ol {
+    margin-bottom: 15px;
+}
+
+.jobs nav ol li {
+    float: left;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.jobs nav .jobBar {
+    background: #fff;
+    margin: 0 20px;
+    border-radius: 5px;
+}
+
+.jobs nav .jobBlock {
+    height: 5px;
+    border-radius: 5px;
+    width: 40px;
+    background: #e8676b;
+}
+
+.jobs nav .jobBlock {
+    transition: all 0.7s;
+}
+
+.jobs nav .state-1 {
+    margin-left: 0;
+}
+
+.jobs nav .state-2 {
+    margin-left: 70px;
+}
+
+.jobs nav .state-3 {
+    margin-left: 145px;
+    width: 96px;
+}
+
+.jobs .job {
+    position: relative;
+}
+
+.jobs .job {
+    text-align: justify;
+}
+
+.jobs a {
+    display: inline-block;
+    width: 200px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+    margin-bottom: 20px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.jobs .job a .title {
+    line-height: 50px;
+    width: 100%;
+    position: absolute;
+    bottom: -50px;
+    background: rgba(10, 10, 10, 0.4);
+    text-align: center;
+    transition: all 0.3s;
+    color: #fff;
+}
+
 .jobs .job a:hover .title {
-  bottom: 0;
+    bottom: 0;
 }
+
 .jobs a:hover {
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 8px 15px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 8px 15px rgba(0, 0, 0, 0.24);
 }
+
 .jobs a img {
     width: 100%;
-    height: 250px;
+    height: 285px;
 }
-
-

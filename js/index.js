@@ -47,10 +47,10 @@ function scroll() {
     if (window.innerHeight - getTop(allPosition[i]) > 150) {
       allPosition[i].classList.remove('data-enten');
       if (allPosition[i].id === 'skills') {
-          var allBar = allPosition[i].getElementsByClassName('progress');
-          for (var aI = 0; aI < allBar.length; aI++) {
-            allBar[aI].removeAttribute('data-progress');
-          }
+        var allBar = allPosition[i].getElementsByClassName('progress');
+        for (var aI = 0; aI < allBar.length; aI++) {
+          allBar[aI].removeAttribute('data-progress');
+        }
       }
     }
   }
